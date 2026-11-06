@@ -1,14 +1,24 @@
-MEUS SERVIÇOS — INSTALAÇÃO
+MEUS SERVIÇOS — ATUALIZAÇÃO 2.0
 
+INSTALAÇÃO / ATUALIZAÇÃO PELO GITHUB
 1. Extraia este ZIP.
-2. Envie TODOS os arquivos desta pasta para a raiz (root) do seu repositório GitHub.
-3. No GitHub, abra Settings > Pages.
-4. Em Build and deployment, escolha Deploy from a branch.
-5. Selecione a branch main e a pasta /(root), depois Save.
-6. Aguarde a publicação e abra o link do GitHub Pages no Safari.
-7. No iPhone, toque em Compartilhar > Adicionar à Tela de Início.
+2. Envie TODOS os arquivos que estão dentro da pasta Meus_Servicos para a raiz (root) do repositório meus-servicos no GitHub, substituindo os arquivos antigos quando solicitado.
+3. No GitHub, confira Settings > Pages: branch main e pasta /(root).
+4. Aguarde a publicação e abra https://marcelofariaptc.github.io/meus-servicos/ no Safari.
+5. Se o iPhone ainda mostrar a versão antiga, feche o aplicativo, abra o link no Safari e atualize a página. Pode ser necessário aguardar alguns minutos para a atualização do cache.
 
-DADOS E PRIVACIDADE
-Os registros ficam salvos localmente no navegador/aparelho (localStorage). O link pode ser compartilhado, mas os dados não são compartilhados nem sincronizados entre aparelhos. Faça backups em Backup e ajustes > Baixar backup.
+NOVIDADES
+- Calendário mensal com os dias que possuem serviços.
+- Relatório mensal e anual, com resumo por mês.
+- Cadastro de clientes com telefone e observações.
+- Despesas detalhadas por categoria: combustível, alimentação, pedágio, estacionamento, equipamento e outros.
+- Meta mensal de ganhos líquidos.
+- Gráfico de ganhos dos últimos seis meses.
+- Backup e restauração agora incluem serviços, clientes e meta.
 
-Aplicativo pessoal para registrar serviços por evento, horários, valores, despesas e situação de pagamento.
+COMPATIBILIDADE E DADOS
+Esta atualização mantém os serviços já cadastrados na versão anterior. As despesas antigas continuam sendo consideradas como “Outros”.
+Os dados permanecem salvos localmente no navegador/aparelho (localStorage). O link pode ser compartilhado, mas os registros não são sincronizados entre pessoas ou aparelhos. Faça um backup antes de atualizar, por segurança.
+
+LEMBRETE
+As notificações de lembrete não fazem parte desta atualização, conforme combinado.

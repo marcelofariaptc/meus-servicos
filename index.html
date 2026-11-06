@@ -1,71 +1,14 @@
 <!doctype html>
-<html lang="pt-BR">
-<head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-<meta name="theme-color" content="#102b46">
-<meta name="apple-mobile-web-app-capable" content="yes">
-<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-<meta name="apple-mobile-web-app-title" content="Meus Serviços">
-<link rel="manifest" href="manifest.json">
-<link rel="icon" href="icon.svg" type="image/svg+xml">
-<link rel="stylesheet" href="style.css">
-<title>Meus Serviços</title>
-</head>
-<body>
-<header><div><span class="eyebrow">CONTROLE PESSOAL</span><h1>Meus Serviços</h1><p>Seus trabalhos, horários e ganhos em um só lugar.</p></div></header>
-<nav class="tabs">
-<button class="tab active" data-view="inicio">Início</button>
-<button class="tab" data-view="novo">Novo serviço</button>
-<button class="tab" data-view="historico">Histórico</button>
-<button class="tab" data-view="relatorios">Relatórios</button>
-<button class="tab" data-view="ajustes">Backup</button>
-</nav>
+<html lang="pt-BR"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><meta name="theme-color" content="#102b46"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-status-bar-style" content="black-translucent"><meta name="apple-mobile-web-app-title" content="Meus Serviços"><link rel="manifest" href="manifest.json"><link rel="icon" href="icon.svg" type="image/svg+xml"><link rel="stylesheet" href="style.css"><title>Meus Serviços</title></head>
+<body><header><div><span class="eyebrow">CONTROLE PESSOAL</span><h1>Meus Serviços</h1><p>Seus trabalhos, horários e ganhos em um só lugar.</p></div></header>
+<nav class="tabs"><button class="tab active" data-view="inicio">Início</button><button class="tab" data-view="novo">Novo serviço</button><button class="tab" data-view="historico">Histórico</button><button class="tab" data-view="calendario">Calendário</button><button class="tab" data-view="clientes">Clientes</button><button class="tab" data-view="relatorios">Relatórios</button><button class="tab" data-view="ajustes">Backup</button></nav>
 <main>
-<section id="inicio" class="view active">
-<div class="section-head"><div><span class="eyebrow">RESUMO</span><h2>Painel do mês</h2></div><input id="dashMonth" type="month" aria-label="Mês do painel"></div>
-<div class="stats">
-<article class="stat"><span>Ganhos líquidos</span><strong id="sProfit">R$ 0,00</strong></article>
-<article class="stat"><span>Recebido</span><strong id="sPaid">R$ 0,00</strong></article>
-<article class="stat"><span>Pendente</span><strong id="sPending">R$ 0,00</strong></article>
-<article class="stat"><span>Serviços</span><strong id="sCount">0</strong></article>
-</div>
-<div class="panel"><h3>Últimos serviços</h3><div id="recent"></div></div>
-</section>
-<section id="novo" class="view">
-<div class="section-head"><div><span class="eyebrow">LANÇAMENTO</span><h2 id="formTitle">Cadastrar serviço</h2></div></div>
-<form id="serviceForm" class="panel">
-<input type="hidden" id="editId">
-<label>Nome do evento/serviço *<input id="event" required placeholder="Ex.: Segurança em evento"></label>
-<div class="two"><label>Cliente/contratante<input id="client" placeholder="Nome do cliente"></label><label>Local<input id="place" placeholder="Local do serviço"></label></div>
-<div class="two"><label>Data *<input id="date" type="date" required></label><label>Situação do pagamento<select id="status"><option value="pendente">Pendente</option><option value="recebido">Recebido</option></select></label></div>
-<div class="two"><label>Entrada<input id="start" type="time"></label><label>Saída<input id="end" type="time"></label></div>
-<div class="two"><label>Valor cobrado (R$) *<input id="amount" type="number" min="0" step="0.01" required placeholder="0,00"></label><label>Despesas (R$)<input id="expenses" type="number" min="0" step="0.01" value="0"></label></div>
-<label>Observações<textarea id="notes" rows="3" placeholder="Informações adicionais"></textarea></label>
-<div class="form-actions"><button class="primary" type="submit">Salvar serviço</button><button class="secondary" type="button" id="cancelEdit">Limpar</button></div>
-<p class="hint">Equipe: somente você · Cobrança por evento</p>
-</form>
-</section>
-<section id="historico" class="view">
-<div class="section-head"><div><span class="eyebrow">REGISTROS</span><h2>Histórico de serviços</h2></div><input id="historyMonth" type="month" aria-label="Filtrar mês"></div>
-<input id="search" class="search" placeholder="Buscar por evento, cliente ou local">
-<div id="historyList"></div>
-</section>
-<section id="relatorios" class="view">
-<div class="section-head"><div><span class="eyebrow">ACOMPANHAMENTO</span><h2>Relatórios</h2></div><input id="reportMonth" type="month" aria-label="Mês do relatório"></div>
-<div id="reportContent" class="panel"></div>
-<button class="primary full" id="shareReport">Compartilhar relatório</button>
-</section>
-<section id="ajustes" class="view">
-<div class="section-head"><div><span class="eyebrow">SEUS DADOS</span><h2>Backup e ajustes</h2></div></div>
-<div class="panel">
-<h3>Backup</h3><p>Salve uma cópia dos seus serviços para recuperar seus dados em outro navegador ou aparelho.</p>
-<div class="stack"><button class="primary" id="export">Baixar backup</button><label class="file-button">Restaurar backup<input id="importFile" type="file" accept="application/json,.json"></label></div>
-</div>
-<div class="panel danger-panel"><h3>Apagar todos os serviços</h3><p>Esta ação remove os registros salvos neste aparelho e navegador.</p><button class="danger" id="deleteAll">Excluir tudo</button></div>
-<p class="hint">Os dados ficam salvos somente neste navegador/aparelho. O link do aplicativo pode ser compartilhado, mas os registros não são enviados para outras pessoas. Faça backups regularmente.</p>
-</section>
-</main>
-<footer>Meus Serviços · Controle pessoal de ganhos</footer>
-<script src="app.js"></script>
-</body></html>
+<section id="inicio" class="view active"><div class="section-head"><div><span class="eyebrow">RESUMO</span><h2>Painel do mês</h2></div><input id="dashMonth" type="month" aria-label="Mês do painel"></div><div class="stats"><article class="stat"><span>Ganhos líquidos</span><strong id="sProfit">R$ 0,00</strong></article><article class="stat"><span>Recebido</span><strong id="sPaid">R$ 0,00</strong></article><article class="stat"><span>Pendente</span><strong id="sPending">R$ 0,00</strong></article><article class="stat"><span>Serviços</span><strong id="sCount">0</strong></article></div>
+<div class="panel"><div class="panel-head"><h3>Meta mensal</h3><button class="text-button" id="editGoal">Definir meta</button></div><div class="goal-track"><div id="goalBar"></div></div><p id="goalText" class="hint">Defina uma meta para acompanhar seu progresso.</p></div><div class="panel"><h3>Ganhos por mês</h3><div id="dashChart" class="bars"></div></div><div class="panel"><h3>Últimos serviços</h3><div id="recent"></div></div></section>
+<section id="novo" class="view"><div class="section-head"><div><span class="eyebrow">LANÇAMENTO</span><h2 id="formTitle">Cadastrar serviço</h2></div></div><form id="serviceForm" class="panel"><input type="hidden" id="editId"><label>Nome do evento/serviço *<input id="event" required placeholder="Ex.: Segurança em evento"></label><div class="two"><label>Cliente/contratante<input id="client" list="clientOptions" placeholder="Nome do cliente"><datalist id="clientOptions"></datalist></label><label>Local<input id="place" placeholder="Local do serviço"></label></div><div class="two"><label>Data *<input id="date" type="date" required></label><label>Situação do pagamento<select id="status"><option value="pendente">Pendente</option><option value="recebido">Recebido</option></select></label></div><div class="two"><label>Entrada<input id="start" type="time"></label><label>Saída<input id="end" type="time"></label></div><label>Valor cobrado (R$) *<input id="amount" type="number" min="0" step="0.01" required placeholder="0,00"></label><div class="expense-head"><h3>Despesas detalhadas</h3><button type="button" class="secondary small" id="addExpense">+ Adicionar gasto</button></div><div id="expenseRows"></div><p id="expenseTotal" class="hint">Total de despesas: R$ 0,00</p><label>Observações<textarea id="notes" rows="3" placeholder="Informações adicionais"></textarea></label><div class="form-actions"><button class="primary" type="submit">Salvar serviço</button><button class="secondary" type="button" id="cancelEdit">Limpar</button></div><p class="hint">Equipe: somente você · Cobrança por evento</p></form></section>
+<section id="historico" class="view"><div class="section-head"><div><span class="eyebrow">REGISTROS</span><h2>Histórico de serviços</h2></div><input id="historyMonth" type="month" aria-label="Filtrar mês"></div><input id="search" class="search" placeholder="Buscar por evento, cliente ou local"><div id="historyList"></div></section>
+<section id="calendario" class="view"><div class="section-head"><div><span class="eyebrow">AGENDA</span><h2>Calendário de serviços</h2></div><input id="calendarMonth" type="month" aria-label="Mês do calendário"></div><div class="panel"><div class="calendar-grid" id="calendarGrid"></div></div><div class="panel"><h3 id="calendarDayTitle">Serviços do dia</h3><div id="calendarDay"></div></div></section>
+<section id="clientes" class="view"><div class="section-head"><div><span class="eyebrow">CONTATOS</span><h2>Meus clientes</h2></div></div><form id="clientForm" class="panel"><input type="hidden" id="clientId"><label>Nome do cliente *<input id="clientName" required placeholder="Nome completo"></label><label>Telefone/WhatsApp<input id="clientPhone" type="tel" placeholder="(00) 00000-0000"></label><label>Observações<textarea id="clientNotes" rows="2" placeholder="Informações opcionais"></textarea></label><div class="form-actions"><button class="primary" type="submit">Salvar cliente</button><button class="secondary" type="button" id="clearClient">Limpar</button></div></form><div id="clientList"></div></section>
+<section id="relatorios" class="view"><div class="section-head"><div><span class="eyebrow">ACOMPANHAMENTO</span><h2>Relatórios</h2></div><select id="reportMode"><option value="month">Mensal</option><option value="year">Anual</option></select></div><div class="section-head"><input id="reportMonth" type="month" aria-label="Mês do relatório"><input id="reportYear" type="number" min="2000" max="2100" aria-label="Ano do relatório"></div><div id="reportContent" class="panel"></div><button class="primary full" id="shareReport">Compartilhar relatório</button></section>
+<section id="ajustes" class="view"><div class="section-head"><div><span class="eyebrow">SEUS DADOS</span><h2>Backup e ajustes</h2></div></div><div class="panel"><h3>Backup</h3><p>Salve uma cópia dos serviços, clientes e metas para recuperar seus dados em outro navegador ou aparelho.</p><div class="stack"><button class="primary" id="export">Baixar backup</button><label class="file-button">Restaurar backup<input id="importFile" type="file" accept="application/json,.json"></label></div></div><div class="panel danger-panel"><h3>Apagar todos os dados</h3><p>Esta ação remove serviços, clientes e meta salvos neste aparelho.</p><button class="danger" id="deleteAll">Excluir tudo</button></div><p class="hint">Os dados ficam salvos somente neste navegador/aparelho. O link do aplicativo pode ser compartilhado, mas os registros não são enviados para outras pessoas. Faça backups regularmente.</p></section>
+</main><footer>Meus Serviços · Controle pessoal de ganhos</footer><script src="app.js"></script></body></html>
