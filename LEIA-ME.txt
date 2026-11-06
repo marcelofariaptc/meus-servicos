@@ -1,0 +1,14 @@
+MEUS SERVIÇOS — INSTALAÇÃO
+
+1. Extraia este ZIP.
+2. Envie TODOS os arquivos desta pasta para a raiz (root) do seu repositório GitHub.
+3. No GitHub, abra Settings > Pages.
+4. Em Build and deployment, escolha Deploy from a branch.
+5. Selecione a branch main e a pasta /(root), depois Save.
+6. Aguarde a publicação e abra o link do GitHub Pages no Safari.
+7. No iPhone, toque em Compartilhar > Adicionar à Tela de Início.
+
+DADOS E PRIVACIDADE
+Os registros ficam salvos localmente no navegador/aparelho (localStorage). O link pode ser compartilhado, mas os dados não são compartilhados nem sincronizados entre aparelhos. Faça backups em Backup e ajustes > Baixar backup.
+
+Aplicativo pessoal para registrar serviços por evento, horários, valores, despesas e situação de pagamento.
